@@ -64,8 +64,15 @@ public class MyMain {
     // exponent(5, 2) = 5 * 5 = 25
     // exponent(4, 0) = 1
     public static int exponent(int base, int power) {
-        // YOUR CODE HERE
-        return -1;
+        if (power == 0) {
+            return 1;
+        }
+        if (power == 1) {
+                return base;
+            } else {
+            return base * exponent(base, power - 1);
+
+        }
     }
 
     // Write a method that uses recursion to count the number
@@ -74,8 +81,15 @@ public class MyMain {
     // countHi("hix") => 1
     // countHi("hellohihi") => 2
     public static int countHi(String str) {
-        // YOUR CODE HERE
-        return -1;
+        if (str.equals("")) {
+            return 0;
+        } else {
+            if (str.indexOf(("hi")) == 0) {
+                return countHi(str.substring(1))+1;
+            } else {
+                return countHi(str.substring(1));
+            }
+        }
     }
 
 
